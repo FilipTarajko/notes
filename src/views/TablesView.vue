@@ -1,27 +1,32 @@
 <script setup lang="ts">
-  import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-  import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
-  import { Input } from '@/components/ui/input'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
+import { Input } from '@/components/ui/input'
+import { Icon } from '@iconify/vue'
+import { Button } from '@/components/ui/button'
 
-  import { useTablesStore } from "@/stores/tablesStore"
-  const tablesStore = useTablesStore();
+import { useTablesStore } from "@/stores/tablesStore"
+const tablesStore = useTablesStore();
 </script>
 
 <template>
   <main>
     <h1>This is the home/tables page</h1>
     <Tabs default-value="account" class="max-w-full">
-      <ScrollArea class="border rounded-md max-w-fit whitespace-nowrap">
-
-
-      <TabsList>
-        <TabsTrigger v-for="table in tablesStore.tables" :value="table.name">
-          {{ table.name }}
-        </TabsTrigger>
-      </TabsList>
-      <ScrollBar orientation="horizontal" />
-      </ScrollArea>
-      <TabsContent v-for="table in tablesStore.tables" :value="table.name">
+      <div class="flex gap-1">
+        <ScrollArea class="border rounded-md max-w-fit whitespace-nowrap">
+          <TabsList>
+            <TabsTrigger v-for="table in tablesStore.tables" :value="table.id + ''">
+              {{ table.name }}
+            </TabsTrigger>
+          </TabsList>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
+        <Button variant="outline" class="h-full" @click="tablesStore.createAndAddTable">
+          <Icon icon="radix-icons:plus" class="h-[1.5rem] w-[1.5rem]" />
+        </Button>
+      </div>
+      <TabsContent v-for="table in tablesStore.tables" :value="table.id + ''">
         <table class="w-full">
           <th v-for="_, columnIndex in table.columns">
             <Input v-model="table.columns[columnIndex]" placeholder="column name" />
