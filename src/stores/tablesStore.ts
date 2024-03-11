@@ -26,9 +26,23 @@ export const useTablesStore = defineStore('tablesStore', () => {
     })
   }
 
+  function createAndAddRowToTable(table: Table) {
+    let nextRowId = 1;
+    for (let i = 0; i < table.rows.length; i++) {
+      if (nextRowId <= table.rows[i].id) {
+        nextRowId = table.rows[i].id + 1;
+      }
+    }
+    table.rows.push({
+      id: nextRowId,
+      fields: []
+    })
+  }
+
   return {
     tables,
     currentlyOpenTableId,
-    createAndAddTable
+    createAndAddTable,
+    createAndAddRowToTable
   }
 })

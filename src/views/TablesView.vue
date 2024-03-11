@@ -38,6 +38,9 @@ const tablesStore = useTablesStore();
             </td>
           </tr>
         </table>
+        <Button variant="outline" class="h-full" @click="tablesStore.createAndAddRowToTable(table)">
+          <Icon icon="radix-icons:plus" class="h-[1.5rem] w-[1.5rem]" />
+        </Button>
       </TabsContent>
     </Tabs>
   </main>
