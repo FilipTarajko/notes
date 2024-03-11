@@ -32,6 +32,11 @@ const tablesStore = useTablesStore();
           <th v-for="_, columnIndex in table.columns">
             <Input v-model="table.columns[columnIndex]" placeholder="column name" />
           </th>
+          <th>
+            <Button variant="outline" class="h-auto" @click="tablesStore.createAndAddColumnToTable(table)">
+              <Icon icon="radix-icons:plus" class="h-[1.5rem] w-[1.5rem]" />
+            </Button>
+          </th>
           <tr v-for="row in table.rows">
             <td v-for="_, fieldIndex in table.columns">
               <Input v-model="row.fields[fieldIndex]" />

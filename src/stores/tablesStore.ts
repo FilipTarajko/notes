@@ -39,10 +39,15 @@ export const useTablesStore = defineStore('tablesStore', () => {
     })
   }
 
+  function createAndAddColumnToTable(table: Table) {
+    table.columns.push("")
+  }
+
   return {
     tables,
     currentlyOpenTableId,
     createAndAddTable,
-    createAndAddRowToTable
+    createAndAddRowToTable,
+    createAndAddColumnToTable
   }
 })
