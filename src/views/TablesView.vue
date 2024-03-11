@@ -21,7 +21,20 @@
       <ScrollBar orientation="horizontal" />
       </ScrollArea>
       <TabsContent v-for="table in tablesStore.tables" :value="table.name">
-        {{ table.id }}
+        <table class="w-full">
+          <th>row id</th>
+          <th v-for="index in table.columns">
+            column {{ index }}
+          </th>
+          <tr v-for="row in table.rows">
+            <td>
+              {{ row.id }}
+            </td>
+            <td v-for="field in row.fields">
+              {{ field }}
+            </td>
+          </tr>
+        </table>
       </TabsContent>
     </Tabs>
   </main>

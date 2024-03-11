@@ -1,5 +1,11 @@
 export type Table = {
     id: number,
     name: string,
-    content: string
+    columns: number,
+    rows: Row[]
+}
+
+export type Row = {
+    id: number,
+    fields: string[]
 }
