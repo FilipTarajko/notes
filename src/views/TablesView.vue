@@ -12,11 +12,12 @@ const tablesStore = useTablesStore();
 <template>
   <main>
     <h1>This is the home/tables page</h1>
-    <Tabs default-value="account" class="max-w-full">
+    <Tabs :default-value="tablesStore.currentlyOpenTableId + ''" class="max-w-full">
       <div class="flex gap-1">
         <ScrollArea class="border rounded-md max-w-fit whitespace-nowrap">
           <TabsList>
-            <TabsTrigger v-for="table in tablesStore.tables" :value="table.id + ''">
+            <TabsTrigger @click="tablesStore.currentlyOpenTableId = table.id" v-for="table in tablesStore.tables"
+              :value="table.id + ''">
               {{ table.name }}
             </TabsTrigger>
           </TabsList>

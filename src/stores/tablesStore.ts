@@ -9,6 +9,7 @@ import defaultTables from "./defaultTables.json"
 
 export const useTablesStore = defineStore('tablesStore', () => {
   const tables: Ref<Table[]> = useStorage('tables', defaultTables)
+  const currentlyOpenTableId: Ref<number> = useStorage('currentlyOpenTableId', 1)
 
   function createAndAddTable() {
     let nextTableId = 1;
@@ -27,6 +28,7 @@ export const useTablesStore = defineStore('tablesStore', () => {
 
   return {
     tables,
+    currentlyOpenTableId,
     createAndAddTable
   }
 })
