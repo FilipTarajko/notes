@@ -2,15 +2,15 @@
     {
       "id": 1,
       "name": "table 1",
-      "columns": 3,
+      "columns": ["foo", "bar", "baz", "another column"],
       "rows": [
         {
           "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
+          "fields": ["field 1", "field 2", "field 3", "field 4"]
         },
         {
           "id": 2,
-          "fields": ["field 1", "field 2", "field 3"]
+          "fields": ["field 1", "field 2"]
         },
         {
           "id": 3,
@@ -21,7 +21,7 @@
     {
       "id": 2,
       "name": "table 2",
-      "columns": 2,
+      "columns": ["column 1", "column 2"],
       "rows": [
         {
           "id": 1,
@@ -32,194 +32,7 @@
     {
       "id": 3,
       "name": "table 3",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "table 4",
-      "columns": 4,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3", "field 4"]
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "table 5",
-      "columns": 5,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3", "field 4", "field 5"]
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "table 6",
-      "columns": 6,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3", "field 4", "field 5", "field 6"]
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "name": "table 7",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "name": "table 8",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "name": "table 9",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "name": "table 10",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "name": "table 11",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "name": "table 12",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 13,
-      "name": "table 13",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 14,
-      "name": "table 14",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 15,
-      "name": "table 15",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 16,
-      "name": "table 16",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 17,
-      "name": "table 17",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 18,
-      "name": "table 18",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 19,
-      "name": "table 19",
-      "columns": 3,
-      "rows": [
-        {
-          "id": 1,
-          "fields": ["field 1", "field 2", "field 3"]
-        }
-      ]
-    },
-    {
-      "id": 20,
-      "name": "table 20",
-      "columns": 3,
+      "columns": ["column 1", "column 2", "column 3"],
       "rows": [
         {
           "id": 1,

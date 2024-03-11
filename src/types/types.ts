@@ -1,7 +1,7 @@
 export type Table = {
     id: number,
     name: string,
-    columns: number,
+    columns: string[],
     rows: Row[]
 }
 
