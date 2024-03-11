@@ -39,6 +39,10 @@ export const useTablesStore = defineStore('tablesStore', () => {
     })
   }
 
+  function removeRowFromTable(rowId: number, table: Table) {
+    table.rows = table.rows.filter((row) => row.id != rowId)
+  }
+
   function createAndAddColumnToTable(table: Table) {
     table.columns.push("")
   }
@@ -48,6 +52,7 @@ export const useTablesStore = defineStore('tablesStore', () => {
     currentlyOpenTableId,
     createAndAddTable,
     createAndAddRowToTable,
-    createAndAddColumnToTable
+    createAndAddColumnToTable,
+    removeRowFromTable
   }
 })

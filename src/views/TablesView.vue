@@ -41,6 +41,9 @@ const tablesStore = useTablesStore();
             <td v-for="_, fieldIndex in table.columns">
               <Input v-model="row.fields[fieldIndex]" />
             </td>
+            <Button variant="destructive" class="h-full" @click="tablesStore.removeRowFromTable(row.id, table)">
+              <Icon icon="radix-icons:trash" class="h-[1.5rem] w-[1.5rem]" />
+            </Button>
           </tr>
         </table>
         <Button variant="outline" class="h-full" @click="tablesStore.createAndAddRowToTable(table)">
