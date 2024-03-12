@@ -31,7 +31,7 @@ const tablesStore = useTablesStore();
         <table class="w-full">
           <tr>
             <th v-for="_, columnIndex in table.columns">
-              <Input v-model="table.columns[columnIndex]" placeholder="column name" />
+              <Input v-model="table.columns[columnIndex].name" placeholder="column name" />
             </th>
             <th>
               <Button variant="outline" @click="tablesStore.createAndAddColumnToTable(table)">

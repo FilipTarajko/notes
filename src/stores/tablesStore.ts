@@ -44,7 +44,17 @@ export const useTablesStore = defineStore('tablesStore', () => {
   }
 
   function createAndAddColumnToTable(table: Table) {
-    table.columns.push("")
+
+    let nextColumnId = 1;
+    for (let i = 0; i < table.columns.length; i++) {
+      if (nextColumnId <= table.columns[i].id) {
+        nextColumnId = table.columns[i].id + 1;
+      }
+    }
+    table.columns.push({
+      id: nextColumnId,
+      name: "column"
+    })
   }
 
   return {
