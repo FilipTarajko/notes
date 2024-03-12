@@ -29,19 +29,21 @@ const tablesStore = useTablesStore();
       </div>
       <TabsContent v-for="table in tablesStore.tables" :value="table.id + ''">
         <table class="w-full">
-          <th v-for="_, columnIndex in table.columns">
-            <Input v-model="table.columns[columnIndex]" placeholder="column name" />
-          </th>
-          <th>
-            <Button variant="outline" class="h-auto" @click="tablesStore.createAndAddColumnToTable(table)">
-              <Icon icon="radix-icons:plus" class="h-[1.5rem] w-[1.5rem]" />
-            </Button>
-          </th>
+          <tr>
+            <th v-for="_, columnIndex in table.columns">
+              <Input v-model="table.columns[columnIndex]" placeholder="column name" />
+            </th>
+            <th>
+              <Button variant="outline" @click="tablesStore.createAndAddColumnToTable(table)">
+                <Icon icon="radix-icons:plus" class="h-[1.5rem] w-[1.5rem]" />
+              </Button>
+            </th>
+          </tr>
           <tr v-for="row in table.rows">
             <td v-for="_, fieldIndex in table.columns">
               <Input v-model="row.fields[fieldIndex]" />
             </td>
-            <Button variant="destructive" class="h-full" @click="tablesStore.removeRowFromTable(row.id, table)">
+            <Button variant="destructive" class="w-full" @click="tablesStore.removeRowFromTable(row.id, table)">
               <Icon icon="radix-icons:trash" class="h-[1.5rem] w-[1.5rem]" />
             </Button>
           </tr>
